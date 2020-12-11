@@ -1,3 +1,4 @@
+use students;
 create table t_univer( 
  	univer_name varchar(150) 
 ); 
