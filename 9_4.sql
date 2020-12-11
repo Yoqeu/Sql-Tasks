@@ -1,3 +1,4 @@
+use students;
 set foreign_key_checks = 0; 
  
 truncate table middle_name_buffer; 
