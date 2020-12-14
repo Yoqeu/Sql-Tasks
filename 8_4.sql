@@ -1,4 +1,4 @@
-use students;
+use MyData;
 select 'name' as table_name, sum(case when char_length(name) = (select min(char_length(name)) from name) then 1 else 0 end) as min, 
 sum(case when char_length(name) = (select max(char_length(name)) from name) then 1 else 0 end) as max,  
 sum(case when char_length(name) = (select round(avg(char_length(name))) from name) then 1 else 0 end) as average 
