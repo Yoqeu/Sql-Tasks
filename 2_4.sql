@@ -1,4 +1,4 @@
-use students;
+use MyData;
 
 create table t_city(
 	id_pk int,
