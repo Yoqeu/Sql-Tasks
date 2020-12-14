@@ -1,4 +1,4 @@
-use students;
+use MyData;
 create table t_univer( 
  	univer_name varchar(150) 
 ); 
