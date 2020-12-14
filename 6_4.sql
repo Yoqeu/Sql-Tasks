@@ -1,3 +1,2 @@
 use students;
-select count(case when name like concat('%', lower(substring('Глеб', 1, 2)), 
-'%') then name else null end) as two, count(case when name like concat('%', lower(substring('Глеб', 1, 3)), '%') then name else null end) as one from name;
+select count(case when name like concat('%', replace('Глеб', right('Глеб', 2),''), '%') then name else null end) as two, count(case when name like concat('%', replace('Глеб', right('Глеб', 1),''), '%') then name else null end) as one from name; 
