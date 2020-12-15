@@ -11,8 +11,8 @@ insert into str_buffer(str_buf) values ('10-летия Октября, улиц�
 
 insert into str(name) select str_buf from str_buffer order by str_buf; 
  
-insert into strtype(str_type) select distinct substring_index(street, ' ', -1) from str_buffer 
-order by substring_index(street, ' ', -1); 
+insert into strtype(str_type) select distinct substring_index(str_buf, ' ', -1) from str_buffer 
+order by substring_index(str_buf, ' ', -1); 
  
 drop table str_buffer; 
  
