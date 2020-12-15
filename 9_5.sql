@@ -2,12 +2,12 @@ use MyData;
 set foreign_key_checks = 0;
 truncate table pers; 
  
-insert into pers(id_gender, id_citizenship, birth_date, letter_pass, pass, id_addr1, id_addr2, id_addr3,  enrollment, id_univ, id_fac, id_spec, id_dep, id_course, id_form, id_budget, timestamp) select  
+insert into pers(id_gender, id_citizenship, birth_date, letter_pass, pass, group_num, id_addr1, id_addr2, id_addr3, enrollment, id_univ, id_fac, id_spec, id_dep, id_course, id_form, id_budget, timestamp) select  
 (rand() * (gender_max - 1) + 1), 
 (rand() * (cntr_max - 1) + 1), 
 from_unixtime(unix_timestamp('2000-1-1') + floor(rand()* 
 (unix_timestamp('2025-1-1')-unix_timestamp('2000-1-1')+1)),"%Y-%m-%d"),
-substring(md5(rand()), 1, 2), rand() * 999998 + 1,
+substring(md5(rand()), 1, 2), rand() * 999998 + 1, rand() * 999998 + 1,
 (rand() * (addr_max - 1) + 1), 
 (rand() * (addr_max - 1) + 1), 
 (rand() * (addr_max - 1) + 1),  
@@ -23,7 +23,7 @@ from_unixtime(unix_timestamp('2000-1-1') + floor(rand()*
 from_unixtime(unix_timestamp('2000-1-1') + floor(rand()* 
 (unix_timestamp('2025-1-1')-unix_timestamp('2000-1-1')+1)),"%Y-%m-%d")
 
-from gender, country, addr, univer, fac, spec, dep, course, form, course, budgetform, 
+from gender, country, addr, univer, fac, spec, dep, course form, budgetform, 
 (select max(id) as gender_max from gender) as gender_t,
 (select max(id_pk) as cntr_max from country) as cntr_t,  
 (select max(id) as addr_max from addr) as addr_t,
