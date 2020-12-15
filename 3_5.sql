@@ -12,7 +12,7 @@ insert into loctype(id) select
 (@index := @index + 1) as id from name as t1, name as t2, 
 (select @index := 0) as t_index limit 100; 
  
-insert into addr(id_cntr, id_reg, id_loc, id_str, id_strtype, id_loctype, id_distr, `house`, `corps`, `flat`, `index`, `number') select (rand() * (cntr_max - 1) + 1), 
+insert into addr(id_cntr, id_reg, id_loc, id_str, id_strtype, id_loctype, id_distr, `house`, `corps`, `flat`, `index`, `number`) select (rand() * (cntr_max - 1) + 1), 
 (rand() * (reg_max - 1) + 1), 
 (rand() * (loc_max - 1) + 1), 
 (rand() * (str_max - 1) + 1), 
