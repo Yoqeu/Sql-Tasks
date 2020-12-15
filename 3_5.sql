@@ -12,13 +12,12 @@ insert into loctype(id) select
 (@index := @index + 1) as id from name as t1, name as t2, 
 (select @index := 0) as t_index limit 100; 
  
-insert into addr(id_cntr, id_reg, id_loc, id_str, id_strtype, id_loctype, id_distr, `house`, `corps`, `flat`, `index`, `number`) select (rand() * (cntr_max - 1) + 1), 
+insert into addr(id_cntr, id_reg, id_loc, id_str, id_strtype, id_loctype, id_distr, `housing`, `apart`, `number`) select (rand() * (cntr_max - 1) + 1), 
 (rand() * (reg_max - 1) + 1), 
 (rand() * (loc_max - 1) + 1), 
 (rand() * (str_max - 1) + 1), 
 (rand() * (strtype_max - 1) + 1), 
-(rand() * (loctype_max - 1) + 1), (rand() * (distr_max - 1) + 1), rand() * 300 + 1, rand() * 30 + 1, rand() * 300 + 1, rand() * 200000 + 1, 
-rand() * 9999998 + 1
+(rand() * (loctype_max - 1) + 1), (rand() * (distr_max - 1) + 1), rand() * 300 + 1, rand() * 30 + 1, rand() * 9999998 + 1
  
 from country, region, city, str, strtype, 
 (select max(id_pk) as cntr_max from country) as country_t,  
