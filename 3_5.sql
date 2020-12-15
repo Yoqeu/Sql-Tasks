@@ -17,8 +17,8 @@ insert into addr(id_cntr, id_reg, id_loc, id_str, id_strtype, id_loctype, id_dis
 (rand() * (loc_max - 1) + 1), 
 (rand() * (str_max - 1) + 1), 
 (rand() * (strtype_max - 1) + 1), 
-(rand() * (loctype_max - 1) + 1), (rand() * (distr_max - 1) + 1) rand() * 300 +1, rand() * 30 + 1, rand() * 300 + 1, rand() * 200000 + 1, 
-rand() * 9999998 + 1 
+(rand() * (loctype_max - 1) + 1), (rand() * (distr_max - 1) + 1), rand() * 300 + 1, rand() * 30 + 1, rand() * 300 + 1, rand() * 200000 + 1, 
+rand() * 9999998 + 1
  
 from country, region, city, str, strtype, 
 (select max(id_pk) as cntr_max from country) as country_t,  
@@ -26,7 +26,7 @@ from country, region, city, str, strtype,
 (select max(id_pk) as loc_max from city) as city_t, 
 (select max(id) as str_max from str) as str_t,  
 (select max(id) as strtype_max from strtype) as strtype_t, 
-(select max(id) as loctype_max from loctype) as loctype_t 
+(select max(id) as loctype_max from loctype) as loctype_t,
 (select max(id) as distr_max from distr) as distr_t limit 10000; 
  
 set foreign_key_checks = 1; 
